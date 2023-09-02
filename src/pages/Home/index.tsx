@@ -84,6 +84,10 @@ export function Home() {
   const minutes = String(minutesAmount).padStart(2, '0')
   const seconds = String(secondsAmount).padStart(2, '0')
 
+  useEffect(() => {
+    document.title = `${minutes}:${seconds}`
+  }, [minutes, seconds])
+
   const task = watch('task')
   const isSubmitDisabled = !task
 
